@@ -113,7 +113,7 @@ Route::prefix('admin')
 
 Route::prefix('owner')
     ->namespace('Owner')
-    ->middleware(['auth','admin'])
+    ->middleware(['auth','owner'])
     ->group(function() {
         Route::get('/', 'DashboardController@index')->name('owner-dashboard');
     });
