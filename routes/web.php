@@ -111,5 +111,12 @@ Route::prefix('admin')
         Route::resource('transaction', 'TransactionController');
     });
 
+Route::prefix('owner')
+    ->namespace('Owner')
+    ->middleware(['auth','admin'])
+    ->group(function() {
+        Route::get('/', 'DashboardController@index')->name('owner-dashboard');
+    });
+
 Auth::routes(['reset' => false]);
 
