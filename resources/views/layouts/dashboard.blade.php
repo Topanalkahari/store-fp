@@ -123,8 +123,8 @@
 
                 <ul class="navbar-nav d-block d-lg-none">
                     <li class="nav-item">
-                        <a href="{{ route('dashboard') }}" class="nav-link">
-                            {{ Auth::user()->name }}
+                        <a href="{{ route('home') }}" class="nav-link">
+                            Home
                         </a>
                     </li>
                     <li class="nav-item">

@@ -23,7 +23,10 @@ class DashboardProductController extends Controller
 
     public function details(Request $request, $id)
     {
-        $product = Product::with(['galleries','user','category'])->findOrFail($id);
+        $product = Product::withTrashed()->with(['galleries' => function($query) {
+            $query->withTrashed();
+        }, 'user', 'category'])->findOrFail($id);
+        
         $categories = Category::all();
 
         return view('pages.dashboard-products-details',[

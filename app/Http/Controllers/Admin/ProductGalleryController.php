@@ -34,13 +34,13 @@ class ProductGalleryController extends Controller
                                         data-toggle="dropdown" 
                                         aria-haspopup="true"
                                         aria-expanded="false">
-                                        Aksi
+                                        Action
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="action' .  $item->id . '">
                                     <form action="' . route('product-gallery.destroy', $item->id) . '" method="POST">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
-                                            Hapus
+                                            Delete
                                         </button>
                                     </form>
                                 </div>

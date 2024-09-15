@@ -86,13 +86,18 @@
 
             <ul class="navbar-nav d-block d-lg-none">
                 <li class="nav-item">
-                    <a href="{{ route('dashboard') }}" class="nav-link">
-                        Hi, {{ Auth::user()->name }}
+                    <a href="{{ route('cart') }}" class="nav-link d-inline-block">
+                        Cart
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('cart') }}" class="nav-link d-inline-block">
-                        Cart
+                    <a href="{{ route('dashboard-transaction') }}" class="nav-link">
+                        History
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('dashboard-settings-account') }}" class="nav-link">
+                        Settings
                     </a>
                 </li>
             </ul>    

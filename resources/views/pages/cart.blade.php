@@ -48,20 +48,28 @@
                   @foreach ($carts as $cart)
                     <tr>
                       <td style="width: 20%;">
-                        @if($cart->product->galleries)
+                        @if($cart->product && $cart->product->galleries->isNotEmpty())
                           <img
                             src="{{ Storage::url($cart->product->galleries->first()->photos) }}"
-                            alt=""
+                            alt="{{ $cart->product->name }}"
+                            class="cart-image"
+                          />
+                        @else
+                          <img
+                            src="/images/default-image-error.jpg"
+                            alt="Default Product Image"
                             class="cart-image"
                           />
                         @endif
                       </td>
                       <td style="width: 35%;">
-                        <div class="product-title">{{ $cart->product->name }}</div>
+                        <div class="product-title">{{ $cart->product ? $cart->product->name : 'Product Not Available' }}</div>
                         <div class="product-subtitle">by Toko Kelontong Rizal</div>
                       </td>
                       <td style="width: 35%;">
-                        <div class="product-title">Rp.{{ number_format($cart->product->price) }}</div>
+                        <div class="product-title">
+                          Rp.{{ $cart->product ? number_format($cart->product->price) : 'Price Not Available' }}
+                        </div>
                         <div class="product-subtitle">IDR</div>
                       </td>
                       <td style="width: 20%;">
@@ -74,7 +82,11 @@
                         </form>
                       </td>
                     </tr>
-                    @php $totalPrice += $cart->product->price @endphp
+                    @php
+                      if ($cart->product && isset($cart->product->price)) {
+                          $totalPrice += $cart->product->price;
+                      }
+                    @endphp
                   @endforeach
                 </tbody>
               </table>
@@ -97,11 +109,14 @@
                   <label for="address_one">Address</label>
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control @error('address_one') is-invalid @enderror"
                     id="address_one"
                     name="address_one"
-                    value="Jl. Cibeunyin Permai, Cibeunying Kaler"
+                    value=""
                   />
+                  @error('address_one')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                  @enderror
                 </div>
               </div>
               <div class="col-md-6">
@@ -112,7 +127,7 @@
                     class="form-control"
                     id="address_two"
                     name="address_two"
-                    value="Blok A No.17"
+                    value=""
                   />
                 </div>
               </div>
@@ -124,7 +139,7 @@
                     class="form-control"
                     id="note"
                     name="note"
-                    value="Mohon letakkan di pagar"
+                    value=""
                   />
                 </div>
               </div>
@@ -136,7 +151,7 @@
                     class="form-control"
                     id="phone_number"
                     name="phone_number"
-                    value="+628 2020 11111"
+                    value=""
                   />
                 </div>
               </div>

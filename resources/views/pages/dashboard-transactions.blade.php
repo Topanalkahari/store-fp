@@ -54,15 +54,15 @@
                       <div class="row">
                         <div class="col-md-1">
                           <img
-                            src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
+                            src="{{ $transaction->product && $transaction->product->galleries->isNotEmpty() ? Storage::url($transaction->product->galleries->first()->photos) : '/images/default-image-error.jpg' }}"
                             class="w-50"
                           />
                         </div>
                         <div class="col-md-4">
-                          {{ $transaction->product->name }}
+                          {{ $transaction->product ? $transaction->product->name : 'Product Deleted' }}
                         </div>
                         <div class="col-md-3">
-                          {{ $transaction->product->user->store_name }}
+                          Toko Kelontong Rizal
                         </div>
                         <div class="col-md-3">
                           {{ $transaction->created_at }}

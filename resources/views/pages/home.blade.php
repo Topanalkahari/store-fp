@@ -27,21 +27,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                     <img
-                        src="/images/banner.jpg"
-                        alt="Carousel Image"
-                        class="d-block w-100"
-                    />
-                    </div>
-                    <div class="carousel-item">
-                    <img
-                        src="/images/banner.jpg"
-                        alt="Carousel Image"
-                        class="d-block w-100"
-                    />
-                    </div>
-                    <div class="carousel-item">
-                    <img
-                        src="/images/banner.jpg"
+                        src="/images/banner2.png"
                         alt="Carousel Image"
                         class="d-block w-100"
                     />
@@ -113,11 +99,13 @@
                                     <div
                                     class="products-image"
                                     style="
-                                        @if($product->galleries)
-                                            background-image: url('{{ Storage::url($product->galleries->first()->photos) }}');
-                                        @else
-                                            background-color: #eee;
-                                        @endif
+                                        @php
+                                            $firstGallery = $product->galleries->first();
+                                            $photoUrl = $firstGallery && $firstGallery->photos
+                                                ? Storage::url($firstGallery->photos)
+                                                : asset('/images/default-image-error.jpg');
+                                        @endphp
+                                        background-image: url('{{ $photoUrl }}');
                                     "
                                     ></div>
                                 </div>

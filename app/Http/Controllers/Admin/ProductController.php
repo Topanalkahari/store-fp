@@ -37,16 +37,16 @@ class ProductController extends Controller
                                         data-toggle="dropdown" 
                                         aria-haspopup="true"
                                         aria-expanded="false">
-                                        Aksi
+                                        Action
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="action' .  $item->id . '">
                                     <a class="dropdown-item" href="' . route('product.edit', $item->id) . '">
-                                        Sunting
+                                        Edit
                                     </a>
                                     <form action="' . route('product.destroy', $item->id) . '" method="POST">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
-                                            Hapus
+                                            Delete
                                         </button>
                                     </form>
                                 </div>
@@ -67,7 +67,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $users = User::all();
+        $users = User::where('roles', 'ADMIN')->get();
         $categories = Category::all();
         
         return view('pages.admin.product.create',[
@@ -113,7 +113,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $item = Product::with(['category','user'])->findOrFail($id);
-        $users = User::all();
+        $users = User::where('roles', 'ADMIN')->get();
         $categories = Category::all();
         
         return view('pages.admin.product.edit',[

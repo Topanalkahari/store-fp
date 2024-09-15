@@ -14,8 +14,7 @@
                 </div>
                 <div class="col-lg-5">
                     <h2>
-                        Belanja kebutuhan utama, <br />
-                        menjadi lebih mudah
+                        Shopping for Essentials Becomes Easier
                     </h2>
                     <form method="POST" action="{{ route('login') }}" class="mt-3">
                         @csrf

@@ -32,11 +32,11 @@ class TransactionController extends Controller
                                         data-toggle="dropdown" 
                                         aria-haspopup="true"
                                         aria-expanded="false">
-                                        Aksi
+                                        Action
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="action' .  $item->id . '">
                                     <a class="dropdown-item" href="' . route('transaction.edit', $item->id) . '">
-                                        Sunting
+                                        Edit
                                     </a>
                                 </div>
                             </div>

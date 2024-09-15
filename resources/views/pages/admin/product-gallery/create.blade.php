@@ -46,7 +46,7 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Foto</label>
+                      <label>Image</label>
                       <input type="file" class="form-control" name="photos" placeholder="Photo" required />
                     </div>
                   </div>

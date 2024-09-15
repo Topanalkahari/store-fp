@@ -25,7 +25,7 @@
               <div class="row">
                 <div class="col-12 col-md-4">
                   <img
-                    src="{{ Storage::url($transaction->product->galleries->first()->photos ?? '') }}"
+                    src="{{ $transaction->product && $transaction->product->galleries->isNotEmpty() ? Storage::url($transaction->product->galleries->first()->photos) : '/images/default-image-error.jpg' }}"
                     class="w-100 mb-3"
                     alt=""
                   />
@@ -39,7 +39,7 @@
                     <div class="col-12 col-md-6">
                       <div class="product-title">Product Name</div>
                       <div class="product-subtitle">
-                        {{ $transaction->product->name }}
+                        {{ $transaction->product ? $transaction->product->name : 'Product Deleted' }}
                       </div>
                     </div>
                     <div class="col-12 col-md-6">

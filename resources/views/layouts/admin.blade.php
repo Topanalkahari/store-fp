@@ -120,7 +120,7 @@
                 <ul class="navbar-nav d-block d-lg-none">
                   <li class="nav-item">
                     <a href="#" class="nav-link">
-                      Hi, Angga
+                      Hi, Admin
                     </a>
                   </li>
                   <li class="nav-item">

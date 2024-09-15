@@ -8,8 +8,7 @@
             <div class="row align-items-center justify-content-center row-login">
                 <div class="col-lg-4">
                     <h2>
-                        Memulai untuk jual beli <br />
-                        dengan cara terbaru
+                        Getting Started to Buy The Newest Way
                     </h2>
                     <form class="mt-3" method="POST" action="{{ route('register') }}">
                         @csrf
@@ -69,7 +68,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Konfirmasi Password</label>
+                            <label>Confirm Password</label>
                             <input 
                                 id="password-confirm" 
                                 type="password" 

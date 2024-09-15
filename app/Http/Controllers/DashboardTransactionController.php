@@ -12,14 +12,19 @@ class DashboardTransactionController extends Controller
 {
     public function index()
     {
-        $sellTransactions = TransactionDetail::with(['transaction.user','product.galleries'])
-                            ->whereHas('product', function($product){
-                                $product->where('users_id', Auth::user()->id);
-                            })->get();
-        $buyTransactions = TransactionDetail::with(['transaction.user','product.galleries'])
-                            ->whereHas('transaction', function($transaction){
-                                $transaction->where('users_id', Auth::user()->id);
-                            })->get();
+        $sellTransactions = TransactionDetail::with(['transaction.user','product' => function($query) {
+            $query->withTrashed();
+        }, 'product.allGalleries'])
+        ->whereHas('product', function($product){
+            $product->where('users_id', Auth::user()->id)->withTrashed();
+        })->get();
+
+        $buyTransactions = TransactionDetail::with(['transaction.user','product' => function($query) {
+            $query->withTrashed();
+        }, 'product.allGalleries'])
+        ->whereHas('transaction', function($transaction){
+            $transaction->where('users_id', Auth::user()->id);
+        })->get();
         
         return view('pages.dashboard-transactions',[
             'sellTransactions' => $sellTransactions,
@@ -29,8 +34,11 @@ class DashboardTransactionController extends Controller
 
     public function details(Request $request, $id)
     {
-        $transaction = TransactionDetail::with(['transaction.user','product.galleries'])
-                            ->findOrFail($id);
+        $transaction = TransactionDetail::with(['transaction.user','product' => function($query) {
+            $query->withTrashed();
+        }, 'product.allGalleries'])
+        ->findOrFail($id);
+
         return view('pages.dashboard-transactions-details',[
             'transaction' => $transaction
         ]);

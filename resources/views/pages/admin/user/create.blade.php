@@ -36,19 +36,19 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Nama User</label>
+                      <label>Username</label>
                       <input type="text" class="form-control" name="name" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Email User</label>
+                      <label>User Email</label>
                       <input type="text" class="form-control" name="email" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Password User</label>
+                      <label>User Password</label>
                       <input type="text" class="form-control" name="password" required />
                     </div>
                   </div>

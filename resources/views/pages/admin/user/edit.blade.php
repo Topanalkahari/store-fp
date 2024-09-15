@@ -37,28 +37,28 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Nama User</label>
+                      <label>Username</label>
                       <input type="text" class="form-control" name="name" value="{{ $item->name }}" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Email User</label>
+                      <label>User Email</label>
                       <input type="text" class="form-control" name="email" value="{{ $item->email }}" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Password User</label>
+                      <label>User Password</label>
                       <input type="text" class="form-control" name="password" />
-                      <small>Kosongkan jika tidak ingin mengganti password</small>
+                      <small>Leave blank if you do not want to change the password</small>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
                       <label>Roles</label>
                       <select name="roles" required class="form-control">
-                          <option value="{{ $item->roles }}" selected>Tidak diganti</option>
+                          <option value="{{ $item->roles }}" selected>Not Changed</option>
                           <option value="ADMIN">Admin</option>
                           <option value="USER">User</option>
                         </select>

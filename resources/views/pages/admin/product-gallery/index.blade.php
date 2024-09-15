@@ -23,16 +23,16 @@
                     <div class="card">
                         <div class="card-body">
                             <a href="{{  route('product-gallery.create') }}" class="btn btn-primary mb-3">
-                                + Tambah Galeri Baru
+                                + Add New Gallery
                             </a>
                             <div class="table-responsive">
                                 <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Produk</th>
-                                        <th>Foto</th>
-                                        <th>Aksi</th>
+                                        <th>Product</th>
+                                        <th>Image</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody></tbody>

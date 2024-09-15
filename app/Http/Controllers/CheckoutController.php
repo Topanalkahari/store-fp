@@ -18,6 +18,17 @@ class CheckoutController extends Controller
 {
     public function process(Request $request)
     {
+        // Tambahkan validasi untuk shipping details
+        $request->validate([
+            'address_one' => 'required|string|max:255',
+            'address_two' => 'required|string|max:255',
+            'phone_number' => 'required|string|max:15',
+        ], [
+            'address_one.required' => 'Please fill in your primary address.',
+            //'address_two.required' => 'Please provide a detailed address.',
+            'phone_number.required' => 'Your mobile number is required for contact.',
+        ]);
+
         Log::info('Callback received');
         // TODO: Save users data
         $user = Auth::user();

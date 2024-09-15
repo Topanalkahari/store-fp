@@ -35,16 +35,16 @@ class CategoryController extends Controller
                                         data-toggle="dropdown" 
                                         aria-haspopup="true"
                                         aria-expanded="false">
-                                        Aksi
+                                        Action
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="action' .  $item->id . '">
                                     <a class="dropdown-item" href="' . route('category.edit', $item->id) . '">
-                                        Sunting
+                                        Edit
                                     </a>
                                     <form action="' . route('category.destroy', $item->id) . '" method="POST">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
-                                            Hapus
+                                            Delete
                                         </button>
                                     </form>
                                 </div>

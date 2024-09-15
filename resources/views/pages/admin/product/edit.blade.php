@@ -37,13 +37,13 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Nama Product</label>
+                      <label>Product Name</label>
                       <input type="text" class="form-control" name="name" value="{{ $item->name }}" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Pemilik Product</label>
+                      <label>Modifier</label>
                       <select name="users_id" class="form-control">
                         <option value="{{ $item->users_id }}">{{ $item->user->name }}</option>
                         <option value="" disabled>----------------</option>
@@ -55,7 +55,7 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Kategori Product</label>
+                      <label>Product Category</label>
                       <select name="categories_id" class="form-control">
                         <option value="{{ $item->categories_id }}">{{ $item->category->name }}</option>
                         <option value="" disabled>----------------</option>
@@ -67,19 +67,19 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Harga</label>
+                      <label>Price</label>
                       <input type="number" class="form-control" name="price" value="{{ $item->price }}" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Stok</label>
+                      <label>Stock</label>
                       <input type="number" class="form-control" name="stock" value="{{ $item->stock }}" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Deskripsi</label>
+                      <label>Description</label>
                       <textarea name="description" id="editor">{!! $item->description !!}</textarea>
                     </div>
                   </div>

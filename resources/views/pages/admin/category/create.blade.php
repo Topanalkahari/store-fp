@@ -36,13 +36,13 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Nama Kategori</label>
+                      <label>Category Name</label>
                       <input type="text" class="form-control" name="name" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Foto</label>
+                      <label>Image</label>
                       <input type="file" class="form-control" name="photo" placeholder="Photo" required />
                     </div>
                   </div>

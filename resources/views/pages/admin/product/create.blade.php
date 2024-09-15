@@ -36,13 +36,13 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Nama Product</label>
+                      <label>Product Name</label>
                       <input type="text" class="form-control" name="name" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Pemilik Product</label>
+                      <label>Modifier</label>
                       <select name="users_id" class="form-control">
                         @foreach ($users as $user)
                           <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -52,7 +52,7 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Kategori Product</label>
+                      <label>Product Category</label>
                       <select name="categories_id" class="form-control">
                         @foreach ($categories as $categories)
                           <option value="{{ $categories->id }}">{{ $categories->name }}</option>
@@ -62,19 +62,19 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Harga</label>
+                      <label>Price</label>
                       <input type="number" class="form-control" name="price" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Stok</label>
+                      <label>Stock</label>
                       <input type="number" class="form-control" name="stock" required />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Deskripsi</label>
+                      <label>Description</label>
                       <textarea name="description" id="editor"></textarea>
                     </div>
                   </div>
