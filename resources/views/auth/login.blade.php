@@ -50,6 +50,7 @@
                         >
                             Sign Up
                         </a>
+                        <a href="{{ route('password.request') }}">Forgot password?</a>
                     </form>
                 </div>
             </div>
