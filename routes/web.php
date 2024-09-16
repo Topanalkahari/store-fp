@@ -109,6 +109,7 @@ Route::prefix('admin')
         Route::resource('product', 'ProductController');
         Route::resource('product-gallery', 'ProductGalleryController');
         Route::resource('transaction', 'TransactionController');
+        Route::resource('off-store', 'OffStoreController');
     });
 
 Route::prefix('owner')

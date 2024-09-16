@@ -57,6 +57,14 @@
             >
               Transactions
             </a>
+            
+            <a
+              href="{{ route('off-store.index') }}"
+              class="list-group-item list-group-item-action {{ (request()->is('admin/off-store*')) ? 'active' : '' }}"
+            >
+              Off Store
+            </a>
+
             <a
               href="{{ route('user.index') }}"
               class="list-group-item list-group-item-action {{ (request()->is('admin/user*')) ? 'active' : '' }} "
