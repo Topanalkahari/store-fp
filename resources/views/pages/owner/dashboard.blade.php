@@ -14,7 +14,7 @@
         <div class="dashboard-heading">
             <h2 class="dashboard-title">Owner Dashboard</h2>
             <p class="dashboard-subtitle">
-                This is Toko Kelontong Rizal Administrator Panel
+                This is Toko Kelontong Rizal Owner Panel
             </p>
         </div>
 

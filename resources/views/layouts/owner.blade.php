@@ -29,7 +29,7 @@
           <div class="list-group list-group-flush">
             <a
               href="{{ route('owner-dashboard') }}"
-              class="list-group-item list-group-item-action {{ (request()->is('admin')) ? 'active' : '' }} "
+              class="list-group-item list-group-item-action {{ (request()->is('owner')) ? 'active' : '' }} "
             >
               Dashboard
             </a>
