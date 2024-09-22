@@ -101,7 +101,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::prefix('admin')
     ->namespace('Admin')
-    ->middleware(['auth','admin', 'owner'])
+    ->middleware(['auth','admin'])
     ->group(function() {
         Route::get('/', 'DashboardController@index')->name('admin-dashboard');
         Route::resource('category', 'CategoryController');
@@ -109,6 +109,7 @@ Route::prefix('admin')
         Route::resource('product', 'ProductController');
         Route::resource('product-gallery', 'ProductGalleryController');
         Route::resource('transaction', 'TransactionController');
+        Route::resource('off-store', 'OffStoreController');
     });
 
 Route::prefix('owner')

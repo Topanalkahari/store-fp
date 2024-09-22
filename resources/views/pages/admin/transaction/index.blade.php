@@ -27,11 +27,11 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Nama</th>
-                                        <th>Harga</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
                                         <th>Status</th>
-                                        <th>Dibuat</th>
-                                        <th>Aksi</th>
+                                        <th>Created</th>
+                                        <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody></tbody>
