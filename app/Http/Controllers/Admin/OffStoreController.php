@@ -43,10 +43,10 @@ class OffStoreController extends Controller
             ]);
 
             DB::commit();
-            return back()->with('success', 'Penjualan offline berhasil dicatat.');
+            return back()->with('success', 'Offline sales are successfully recorded.');
         } catch (\Exception $e) {
             DB::rollback();
-            return back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+            return back()->with('error', 'Something went wrong: ' . $e->getMessage());
         }
     }
 }
